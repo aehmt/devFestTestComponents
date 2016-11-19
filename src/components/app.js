@@ -19,6 +19,10 @@ export default class App extends React.Component{
     }
     this.eventSearch('karaoke')
   }
+  
+  componentDidMount(){
+    this.loadStyleSheet('style', '/style/style.css');
+  }
 
   eventSearch(term) {
     const OAuth_token = 'FEELRVTAKH4YPZX4BKQT';
@@ -47,7 +51,7 @@ export default class App extends React.Component{
       )
     } else {
       return (
-        <div id = "userMenu">
+        <div id="userMenu">
           <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>
         </div>
       )

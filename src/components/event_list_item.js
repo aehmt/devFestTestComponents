@@ -4,7 +4,7 @@ const EventListItem = (props) => {
   const event = props.event
 
     return (
-      <li>{event.name.html}</li>
+      <li>{event.name.text}</li>
     )
 }
 
