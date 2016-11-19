@@ -24,6 +24,7 @@
     "javascript"
   ],
   "dependencies": {
+    "axios": "^0.15.2",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
@@ -39,6 +40,8 @@
     "firebase": "^3.6.1",
     "fs": "0.0.1-security",
     "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.2",
     "open": "0.0.5",
     "react": "^0.14.8",
     "react-color": "^2.4.3",
