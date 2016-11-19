@@ -1,4 +1,4 @@
-import Events from './events'
+// import Events from './events'
 import FilteredUsers from './filteredUsers'
 import React, { Component } from 'react';
 import SearchBar from './search_bar.js';
@@ -14,7 +14,9 @@ export default class App extends React.Component{
     let choice = this.props.index
     this.state = {
       index: choice,
-      events: []
+      events: [],
+      interestedUsers: [],
+      filterBy: null
     }
     this.eventSearch('karaoke')
   }
@@ -40,14 +42,14 @@ export default class App extends React.Component{
         <div id="eventContainer">
           <Login />
           <p>Events for you to check out:</p>
-          <SearchBar onSearchTermChange={eventSearch} />  
+          <SearchBar onSearchTermChange={eventSearch} />
           <EventList events={this.state.events} />
         </div>
       )
     } else {
       return (
         <div id = "userMenu">
-          <FilteredUsers />
+          <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>
         </div>
       )
     }
