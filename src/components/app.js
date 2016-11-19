@@ -1,4 +1,4 @@
-// import Events from './events'
+import FilterMenu from './filterMenu'
 import FilteredUsers from './filteredUsers'
 import React, { Component } from 'react';
 import SearchBar from './search_bar.js';
@@ -14,7 +14,8 @@ export default class App extends React.Component{
       index: choice,
       events: [],
       interestedUsers: [],
-      filterBy: null
+      filterBy: 'all',
+      filters: ['friends', 'date', 'group']
     }
     this.eventSearch('karaoke')
   }
@@ -46,7 +47,8 @@ export default class App extends React.Component{
     } else {
       return (
         <div id = "userMenu">
-          <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>
+          <FilterMenu chooseFilter={this.state.filterBy} filters={this.state.filters}/>
+          <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>  
         </div>
       )
     }

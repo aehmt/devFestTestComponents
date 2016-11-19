@@ -28,24 +28,24 @@ const server = app.listen(process.env.PORT || port, function(err) {
   //   console.log(err);
   // }
 });
-
-const io = require('socket.io')(server);
-
-io.sockets.on('connect', (socket) => {
-  console.log('a user connected');
-  var room;
-  socket.on('subscribe', (data) => {
-    room = data.room;
-    io.to(room).emit('geteverything')
-    socket.join(data.room) 
-  })
-  socket.on('unsubscribe', (data) => {
-    socket.leave(data.room)
-  })
-  socket.on('draw', (drawCoords) => {
-    io.to(room).emit('draw', drawCoords);
-  })
-  socket.on('loadstuff', (base64) => {
-    io.to(room).emit('loadstuff', base64)
-  })
-});
+// 
+// const io = require('socket.io')(server);
+//
+// io.sockets.on('connect', (socket) => {
+//   console.log('a user connected');
+//   var room;
+//   socket.on('subscribe', (data) => {
+//     room = data.room;
+//     io.to(room).emit('geteverything')
+//     socket.join(data.room)
+//   })
+//   socket.on('unsubscribe', (data) => {
+//     socket.leave(data.room)
+//   })
+//   socket.on('draw', (drawCoords) => {
+//     io.to(room).emit('draw', drawCoords);
+//   })
+//   socket.on('loadstuff', (base64) => {
+//     io.to(room).emit('loadstuff', base64)
+//   })
+// });
