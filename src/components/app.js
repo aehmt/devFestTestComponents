@@ -1,10 +1,9 @@
-// import Events from './events'
-import FilteredUsers from './filteredUsers'
+import FilteredUsers from './filteredUsers';
 import React, { Component } from 'react';
 import SearchBar from './search_bar.js';
 import EventList from './event_list.js';
 import axios from 'axios';
-import _ from 'lodash'
+import _ from 'lodash';
 
 export default class App extends React.Component{
   constructor(props){
