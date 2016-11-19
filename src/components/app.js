@@ -1,5 +1,6 @@
 import React from 'react'
 import Events from './events'
+import FilteredUsers from './filteredUsers'
 
 export default class App extends React.Component{
   constructor(props){
@@ -21,7 +22,11 @@ export default class App extends React.Component{
         </div>
       )
     } else {
-      return <div>Here Be Dragons</div>
+      return (
+        <div id = "userMenu">
+          <FilteredUsers />
+        </div>
+      )
     }
 
   }
