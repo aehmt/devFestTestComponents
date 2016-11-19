@@ -5,6 +5,8 @@ import EventList from './event_list.js';
 import axios from 'axios';
 import _ from 'lodash';
 
+import Login from './user/login'
+
 export default class App extends React.Component{
   constructor(props){
     super(props);
@@ -37,6 +39,7 @@ export default class App extends React.Component{
     if (this.state.index){
       return (
         <div id="eventContainer">
+          <Login />
           <p>Events for you to check out:</p>
           <SearchBar onSearchTermChange={eventSearch} />
           <EventList events={this.state.events} />
