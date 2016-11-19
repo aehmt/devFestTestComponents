@@ -10,10 +10,12 @@ var config = {
 firebase.initializeApp(config);
 
 module.exports = {
+    firebase: function() {
+      return firebase;
+    },
     currentUser: function() {
       return firebase.auth().currentUser;
     },
-    // called at app start
     loginUser: function(email, password){
        firebase.auth()
        		.signInWithEmailAndPassword(email, password)
@@ -21,10 +23,9 @@ module.exports = {
               console.log(res.email)
        		 })
        		.catch(function(error) {
-					  // Handle Errors here.
 					  var errorCode = error.code;
 					  var errorMessage = error.message;
-					  // ...
+	           
 					});
     },
     signupUser: function(email, password){
