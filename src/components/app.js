@@ -8,7 +8,9 @@ export default class App extends React.Component{
     let choice = this.props.index
     this.state = {
       index: choice,
-      events: []
+      events: [],
+      interestedUsers: [],
+      filterBy: null
     }
   }
 
@@ -24,7 +26,7 @@ export default class App extends React.Component{
     } else {
       return (
         <div id = "userMenu">
-          <FilteredUsers />
+          <FilteredUsers all={this.state.interestedUsers} filter={this.state.filterBy}/>
         </div>
       )
     }
