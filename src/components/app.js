@@ -1,4 +1,4 @@
-import Events from './events'
+// import Events from './events'
 import FilteredUsers from './filteredUsers'
 import React, { Component } from 'react';
 import SearchBar from './search_bar.js';
