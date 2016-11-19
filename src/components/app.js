@@ -8,10 +8,25 @@ export default class App extends React.Component{
     let choice = this.props.index
     this.state = {
       index: choice,
-      events: []
+      events: [],
+      selectedEvent: null,
+      modalIsOpen: false
     }
   }
 
+  openModal(event) {
+    this.setState({
+      modalIsOpen: true,
+      selectedEvent: event
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      modalIsOpen: false,
+      selectedEvent: null
+    });
+  }
 
   render(){
     if (this.state.index){
