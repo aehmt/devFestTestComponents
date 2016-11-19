@@ -4,7 +4,7 @@ import React from 'react'
 // user: {
 //    eventsToGoTo: [],
 //    name:
-//    image:
+//    imageUrl:
 //    description:
 //    searchingFor:
 //  }
@@ -27,21 +27,4 @@ export default function User(props){
       )}
     </div>
   )
-  // return (
-  //   <div id="foundUsers">
-  //     {props.users.map((user,i) =>
-  //       <div key={i} className = "user">
-  //         <div className = "profilePhoto">
-  //           <img src = "http://i.giphy.com/d2Z7Er7VSQPiPgiY.gif" />
-  //         </div>
-  //         <div className = "name">
-  //           Name: Slim Shady
-  //         </div>
-  //         <div className = "desc">
-  //           <p> Description: I am another user and I am interested in the sameEvent!!! woo! </p>
-  //         </div>
-  //       </div>
-  //     )}
-  //   </div>
-  // )
 }
