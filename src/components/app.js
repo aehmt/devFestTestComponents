@@ -1,6 +1,7 @@
 import React from 'react'
 import Events from './events'
 import FilteredUsers from './filteredUsers'
+import EventModal from './EventModal';
 
 export default class App extends React.Component{
   constructor(props){
@@ -34,6 +35,11 @@ export default class App extends React.Component{
         <div id="eventContainer">
           <p>Events for you to Check out:</p>
           <Events events={this.state.events}/>
+
+          <EventModal modalIsOpen={this.state.modalIsOpen}
+          selectedGif={this.state.selectedGif}
+          onRequestClose={ () => this.closeModal() } />
+
         </div>
       )
     } else {
