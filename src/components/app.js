@@ -18,6 +18,7 @@ export default class App extends React.Component{
       filters: ['friends', 'date', 'group']
     }
     this.eventSearch('karaoke')
+    this.updateFilter = this.updateFilter.bind(this)
   }
 
   eventSearch(term) {
@@ -34,6 +35,10 @@ export default class App extends React.Component{
     });
   }
 
+  updateFilter(event) {
+    this.setState({ filterBy: event.target.value });
+  }
+
   render(){
     const eventSearch = _.debounce((term) => {this.eventSearch(term)}, 500);
     if (this.state.index){
@@ -47,8 +52,8 @@ export default class App extends React.Component{
     } else {
       return (
         <div id = "userMenu">
-          <FilterMenu chooseFilter={this.state.filterBy} filters={this.state.filters}/>
-          <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>  
+          <FilterMenu chooseFilter={this.updateFilter} filters={this.state.filters}/>
+          <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>
         </div>
       )
     }
