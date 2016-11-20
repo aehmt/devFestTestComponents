@@ -3,10 +3,14 @@ import InterestedButton from './interestedButton'
 
 const EventDetail = (props) => {
   if (!props.event) {
-    return <div id="event-detail" className="event-detail">Loading...</div>
+    $('#event-detail').css( "opacity", "0" );
+    $('#event-list').css( "opacity", "0" );
+    return (
+      <div id="event-detail" className="event-detail"></div>
+    )
   }
-  $('#event-detail').css( "opacity", "1" );
-  $('#event-list').css( "opacity", "1" );
+  $('#event-detail').css( "opacity", "1" ).fadeIn( 500 );
+  $('#event-list').css( "opacity", "1" ).fadeIn( 500 );
   return (
     <div id="event-detail" className="event-detail">
       <div className="bs-component">

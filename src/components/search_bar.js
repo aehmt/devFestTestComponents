@@ -15,20 +15,20 @@ class SearchBar extends Component {
 
   componentDidMount() {
     $( "#bar1" ).focusin(function() {
-      $('#event-detail').css( "opacity", "0.2" );
-      $('#event-list').css( "opacity", "0.2" );
+      $('#event-detail').css( "opacity", "0.2" ).fadeOut( 500 );
+      $('#event-list').css( "opacity", "0.2" ).fadeOut( 500 );
     });
     $( "#bar1" ).focusout(function() {
-      $('#event-detail').css( "opacity", "1" );
-      $('#event-list').css( "opacity", "1" );
+      $('#event-detail').css( "opacity", "1" ).fadeIn( 500 );
+      $('#event-list').css( "opacity", "1" ).fadeIn( 500 );
     });
     $( "#bar2" ).focusin(function() {
-      $('#event-detail').css( "opacity", "0.2" );
-      $('#event-list').css( "opacity", "0.2" );
+      $('#event-detail').css( "opacity", "0.2" ).fadeOut( 500 );
+      $('#event-list').css( "opacity", "0.2" ).fadeOut( 500 );
     });
     $( "#bar2" ).focusout(function() {
-      $('#event-detail').css( "opacity", "1" );
-      $('#event-list').css( "opacity", "1" );
+      $('#event-detail').css( "opacity", "1" ).fadeIn( 500 );
+      $('#event-list').css( "opacity", "1" ).fadeIn( 500 );
     });
   }
   

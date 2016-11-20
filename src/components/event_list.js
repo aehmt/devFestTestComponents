@@ -2,6 +2,14 @@ import React from 'react';
 import EventListItem from './event_list_item'
 
 const EventList = (props) => {
+  if (props.events.length < 1) {
+    $('#event-detail').css( "opacity", "0" );
+    $('#event-list').css( "opacity", "0" );
+    return (
+      <div id="event-list"></div>
+    )
+  }
+
   const events = props.events.map((event) => {
     return (
       <EventListItem onEventSelect={props.onEventSelect} event={event} key={event.id} />
