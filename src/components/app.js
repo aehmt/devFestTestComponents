@@ -7,6 +7,7 @@ import _ from 'lodash';
 
 import Login from './user/login'
 import { currentUser } from './firebase/firebase';
+import MenuBar from './menu_bar.js';
 
 export default class App extends React.Component{
   constructor(props){
@@ -54,7 +55,6 @@ export default class App extends React.Component{
 
   render(){
     const eventSearch = _.debounce((term) => {this.eventSearch(term)}, 500);
-
     if (this.state.currentUser === null) {
       return (<Login />)
     } else {
