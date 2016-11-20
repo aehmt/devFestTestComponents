@@ -8,7 +8,7 @@ const EventList = (props) => {
     )
   })
   return (
-    <ul>
+    <ul className="col-md-4 list-group">
       {events} 
     </ul>
   )
