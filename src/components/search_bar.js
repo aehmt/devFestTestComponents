@@ -23,7 +23,7 @@ class SearchBar extends Component {
             <a href="#"><img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"/></a>
             </div>
             <div className="col-md-8">
-            Event:<input type="text" id="search-bar" placeholder="What can I help you with today?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
+            <input type="text" id="search-bar" placeholder="What can I help you with today?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
             Location:<input type="text" id="location-search-bar" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
             </div>
           </div>
