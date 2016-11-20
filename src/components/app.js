@@ -53,7 +53,7 @@ export default class App extends React.Component{
   }
 
   render(){
-    const eventSearch = _.debounce((term) => {this.eventSearch(term)}, 500);
+    const eventSearch = _.debounce((term) => {this.eventSearch(term)}, 300);
 
     if (this.state.currentUser === null) {
       return (<Login />)
@@ -61,20 +61,27 @@ export default class App extends React.Component{
       if (this.state.index){
         return (
           <div id="eventContainer">
-            <p>Events for you to check out:</p>
             <SearchBar onSearchTermChange={eventSearch} />
-            <EventDetail event={this.state.selectedEvent}/>
-            <EventList onEventSelect={selectedEvent => this.setState({selectedEvent})} events={this.state.events} />
+            <div>
+              <div className="row">
+                <div className="col-md-6">
+                  <EventDetail event={this.state.selectedEvent}/>
+                </div>
+                <div className="col-md-6">
+                  <p>Events for you to check out:</p>
+                  <EventList onEventSelect={selectedEvent => this.setState({selectedEvent})} events={this.state.events} />
+                </div>
+              </div>
+            </div>
           </div>
         )
       } else {
         return (
-          <div id = "userMenu">
+          <div id="userMenu">
             <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>
           </div>
         )
       }
-
     }
   }
 }
