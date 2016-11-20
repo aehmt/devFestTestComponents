@@ -13,6 +13,7 @@ module.exports = {
     firebase: function() {
       return firebase;
     },
+    pushData: firebase.database(),
     currentUser: function() {
       return firebase.auth().currentUser;
     },
@@ -25,7 +26,7 @@ module.exports = {
        		.catch(function(error) {
 					  var errorCode = error.code;
 					  var errorMessage = error.message;
-	           
+
 					});
     },
     signupUser: function(email, password){
@@ -34,7 +35,7 @@ module.exports = {
         .then(function(res) {
           console.log(res.email)
         })
-      	.catch(function(error) { 
+      	.catch(function(error) {
 			  // Handle Errors here.
 			  var errorCode = error.code;
 			  var errorMessage = error.message;

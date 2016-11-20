@@ -67,7 +67,7 @@ export default class App extends React.Component{
               <div className="row row-eq-height">
                 <div className="col-md-8">
 
-                  <EventDetail event={this.state.selectedEvent}/>
+                  <EventDetail userId={this.state.currentUser} event={this.state.selectedEvent}/>
                 </div>
                 <div className="col-md-4">
                   <EventList onEventSelect={selectedEvent => this.setState({selectedEvent})} events={this.state.events} />
@@ -86,6 +86,3 @@ export default class App extends React.Component{
     }
   }
 }
-
-
-

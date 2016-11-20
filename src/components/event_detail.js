@@ -1,19 +1,22 @@
 import React from 'react';
-
-const EventDetail = ({event}) => {
-  if (!event) {
+import InterestedButton from './interestedButton'
+const EventDetail = (props) => {
+  if (!props.event) {
     return <div>Loading...</div>
   }
-  console.log(event)
+  console.log(props.event)
 
   return (
       <div className="event-detail">
-        <div className="title">{event.name.text}</div>
+        <div className="title">{props.event.name.text}</div>
         <div className="embed-responsive embed-responsive-16by9">
-          <img className="embed-responsive-item" src={event.logo.url}></img>
+          <img className="embed-responsive-item" src={props.event.logo.url}></img>
         </div>
         <div className="details">
-          <div>{event.description.text}</div>
+          <div>{props.event.description.text}</div>
+        </div>
+        <div className="buttonDiv">
+          <InterestedButton assignEmail = {props.userId.email} assignEvent={props.event.id}/>
         </div>
       </div>
   );
