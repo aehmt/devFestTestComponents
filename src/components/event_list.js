@@ -4,7 +4,7 @@ import EventListItem from './event_list_item'
 const EventList = (props) => {
   const events = props.events.map((event) => {
     return (
-      <EventListItem event={event} key={event.id} />
+      <EventListItem onEventSelect={props.onEventSelect} event={event} key={event.id} />
     )
   })
   return (

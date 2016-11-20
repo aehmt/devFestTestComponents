@@ -2,6 +2,7 @@ import FilteredUsers from './filteredUsers';
 import React, { Component } from 'react';
 import SearchBar from './search_bar.js';
 import EventList from './event_list.js';
+import EventDetail from './event_detail.js';
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -16,17 +17,15 @@ export default class App extends React.Component{
       index: choice,
       events: [],
       interestedUsers: [],
-      filterBy: null
+      filterBy: null,
+      selectedEvent: null
     }
     this.eventSearch('karaoke')
   }
-  
-
 
   componentWillMount() {
     const that = this;
     this.props.firebase.auth().onAuthStateChanged(function(user) {
-
       if (user) {
         // User is signed in.
         that.setState({currentUser: user})
@@ -44,8 +43,9 @@ export default class App extends React.Component{
     axios.get(url)
       .then((response) => {
         this.setState({
-          events: response.data.events
-        })
+          events: response.data.events,
+          selectedEvent: response.data.events[0]
+        });
       })
       .catch(function (error) {
         console.log(error);
@@ -63,8 +63,8 @@ export default class App extends React.Component{
           <div id="eventContainer">
             <p>Events for you to check out:</p>
             <SearchBar onSearchTermChange={eventSearch} />
-            <EventList events={this.state.events} />
-            <Login />
+            <EventDetail event={this.state.selectedEvent}/>
+            <EventList onEventSelect={selectedEvent => this.setState({selectedEvent})} events={this.state.events} />
           </div>
         )
       } else {
@@ -78,3 +78,6 @@ export default class App extends React.Component{
     }
   }
 }
+
+
+
