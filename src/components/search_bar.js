@@ -16,14 +16,13 @@ class SearchBar extends Component {
   render() {
     return (
       <div>
-        <form className="search-container">
+        <form className="form-inline">
           <div className="row">
-          <div className="col-md-2">
-            <a href="#"><img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"/></a>
+            <div className="col-md-4 col-md-offset-3">
+              <input type="text" id="search-bar" placeholder="What would you I like to do?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
             </div>
-            <div className="col-md-8">
-            <input type="text" id="search-bar" placeholder="What can I help you with today?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
-            Location:<input type="text" id="location-search-bar" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
+            <div className="col-md-2">
+              <input type="text" id="search-bar" placeholder="Location" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
             </div>
           </div>
         </form>
