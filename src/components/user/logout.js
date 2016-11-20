@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { signupUser, loginUser, logoutUser, currentUser } from '../firebase/firebase';
+import { logoutUser, currentUser } from '../firebase/firebase';
 
 export default class Logout extends React.Component{
 	constructor() {
@@ -29,9 +29,7 @@ export default class Logout extends React.Component{
   render() {
     return (
     	<div>
-	      <form role="form">
-	        <button type="submit" onClick={this.logout.bind(this)}>Log out</button>
-	      </form>
+	        <button type="submit" className="btn btn-raised btn-danger" onClick={this.logout.bind(this)} style={{left: '90%'}}>Log out</button>
     	</div>
     );
   }

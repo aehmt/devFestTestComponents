@@ -38,27 +38,26 @@ export default class Login extends React.Component{
 
   render() {
     return (
-    	<div className="container">
-        <form>
+    	<div id="login" className="container" style={{marginTop: '200px', width: '70%'}}>
+        <form style={{margin: '100px 200px 100px', backgroundColor: 'white', color: 'white'}}>
           <div className="form-group label-static is-empty">
             <label className="control-label" htmlFor="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Email"
+            <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Your email"
                     onChange={this.handleInputChange.bind(this, 'email')}
-                    value={this.state.email} placeholder="Email"
+                    value={this.state.email}
             />
           </div>
           <div className="form-group label-static">
             <label className="control-label" htmlFor="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"
+            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password"
                     onChange={this.handleInputChange.bind(this, 'password')}
-                    value={this.state.password} placeholder="Password"
+                    value={this.state.password}
             />
           </div>
-          <button type="submit" className="btn btn-raised btn-primary" onClick={this.signup.bind(this)}>Sign up</button>
-          <button type="submit" className="btn btn-raised btn-default" onClick={this.login.bind(this)}>Login</button>
-          <button type="submit" className="btn btn-raised btn-info" onClick={this.logout.bind(this)}>Log out</button>
-          
-        </form>
+          <button type="submit" className="btn btn-raised btn-primary" onClick={this.login.bind(this)}>Login</button>        
+          <button type="submit" className="btn btn-raised btn-info" onClick={this.signup.bind(this)}>Sign up</button>
+          </form>
+
     	</div>
     );
   }
