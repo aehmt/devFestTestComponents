@@ -7,6 +7,7 @@ import axios from 'axios';
 import _ from 'lodash';
 
 import Login from './user/login'
+import Logout from './user/logout'
 import { currentUser } from './firebase/firebase';
 
 export default class App extends React.Component{
@@ -65,6 +66,7 @@ export default class App extends React.Component{
             <div id="content" className="container">
               <div className="row row-eq-height">
                 <div className="col-md-8">
+
                   <EventDetail event={this.state.selectedEvent}/>
                 </div>
                 <div className="col-md-4">
