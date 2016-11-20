@@ -8,7 +8,6 @@ class SearchBar extends Component {
     this.state = { term: 'karaoke', location: 'New York' };
   }
 
-
   onInputChange(term, location) {
     this.setState({term, location});
     this.props.onSearchTermChange(term, location);

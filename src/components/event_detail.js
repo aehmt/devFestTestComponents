@@ -15,9 +15,9 @@ const EventDetail = (props) => {
             {props.event.logo ? <img className="embed-responsive-item" src={props.event.logo.url}></img> : <img className="embed-responsive-item" src='http://www.arabamerica.com/wp-content/themes/arabamerica/assets/img/thumbnail-default.jpg'></img> }
           </div>
           <div className="details">
+            <InterestedButton assignEmail = {props.userId.email} assignEvent={props.event.id}/>
             <div>{props.event.description.text}</div>
             <div className="buttonDiv">
-              <InterestedButton assignEmail = {props.userId.email} assignEvent={props.event.id}/>
             </div>
           </div>
         </div>
