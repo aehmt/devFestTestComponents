@@ -34,7 +34,7 @@ module.exports = {
         .then(function(res) {
           console.log(res.email)
         })
-      	.catch(function(error) {
+      	.catch(function(error) { 
 			  // Handle Errors here.
 			  var errorCode = error.code;
 			  var errorMessage = error.message;
