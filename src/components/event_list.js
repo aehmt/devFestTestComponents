@@ -17,7 +17,7 @@ const EventList = (props) => {
     fontSize: '1.3em'
   }
   return (
-    <div className="jumbotron">
+    <div id="event-list" className="jumbotron">
       <p style={titleStyle}>Events for you to check out:</p>
       <div className="ltable table-striped" style={{overflow: 'scroll', height: '500px'}}>
         <ul style={listStyle}>

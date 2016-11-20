@@ -12,6 +12,25 @@ class SearchBar extends Component {
     this.setState({term, location});
     this.props.onSearchTermChange(term, location);
   }
+
+  componentDidMount() {
+    $( "#bar1" ).focusin(function() {
+      $('#event-detail').css( "opacity", "0.2" );
+      $('#event-list').css( "opacity", "0.2" );
+    });
+    $( "#bar1" ).focusout(function() {
+      $('#event-detail').css( "opacity", "1" );
+      $('#event-list').css( "opacity", "1" );
+    });
+    $( "#bar2" ).focusin(function() {
+      $('#event-detail').css( "opacity", "0.2" );
+      $('#event-list').css( "opacity", "0.2" );
+    });
+    $( "#bar2" ).focusout(function() {
+      $('#event-detail').css( "opacity", "1" );
+      $('#event-list').css( "opacity", "1" );
+    });
+  }
   
   render() {
     return (
@@ -19,10 +38,10 @@ class SearchBar extends Component {
         <form className="form-inline">
           <div className="row">
             <div className="col-md-4 col-md-offset-3">
-              <input type="text" id="search-bar" placeholder="What would you I like to do?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
+              <input type="text" id="bar1" className="search-bar" placeholder="What would you I like to do?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
             </div>
             <div className="col-md-2">
-              <input type="text" id="search-bar" placeholder="Location" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
+              <input type="text" id="bar2" className="search-bar" placeholder="Location" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
             </div>
           </div>
         </form>

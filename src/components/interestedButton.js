@@ -21,8 +21,14 @@ export default function InterestedButton(props){
     console.log("Consoling something " + something);
   }
   return (
-    <button onClick={sendStuffToDB}>
-      Interested?
+    <div>
+    <button className="btn btn-danger btn-fab-mini" onClick={sendStuffToDB}>
+      <span className="fa-stack fa-lg" onClick={sendStuffToDB}>
+        <i className="fa fa-circle fa-stack-2x"></i>
+        <i className="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
+      </span>
     </button>
+
+    </div>
   )
 }

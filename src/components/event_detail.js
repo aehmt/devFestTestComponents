@@ -3,11 +3,12 @@ import InterestedButton from './interestedButton'
 
 const EventDetail = (props) => {
   if (!props.event) {
-    return <div>Loading...</div>
+    return <div id="event-detail" className="event-detail">Loading...</div>
   }
-  console.log(props.event)
+  $('#event-detail').css( "opacity", "1" );
+  $('#event-list').css( "opacity", "1" );
   return (
-    <div className="event-detail">
+    <div id="event-detail" className="event-detail">
       <div className="bs-component">
         <div className="jumbotron">
           <div className="title">{props.event.name.text}</div>
