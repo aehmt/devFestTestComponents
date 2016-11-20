@@ -179,11 +179,11 @@ input.search-bar{
   height: 100%;
   background-size: cover;
 
-  -webkit-filter: blur(20px);
-  -moz-filter: blur(20px);
-  -o-filter: blur(20px);
-  -ms-filter: blur(20px);
-  filter: blur(20px);
+  -webkit-filter: blur(18px);
+  -moz-filter: blur(18px);
+  -o-filter: blur(18px);
+  -ms-filter: blur(18px);
+  filter: blur(18px);
 }
 
 .inner {
