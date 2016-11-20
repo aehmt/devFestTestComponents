@@ -4,7 +4,7 @@ const EventListItem = (props) => {
   const event = props.event
 
     return (
-      <li>{event.name.text}</li>
+      <li onClick={props.handleChoice}>{event.name.text}</li>
     )
 }
 
