@@ -19,7 +19,7 @@ const EventList = (props) => {
   return (
     <div className="">
       <p style={titleStyle}>Events for you to check out:</p>
-      <div className="list-group">
+      <div className="ltable table-striped" style={{overflow: 'scroll', height: '500px'}}>
         <ul style={listStyle}>
           {events} 
         </ul>
