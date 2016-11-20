@@ -1,1 +1,1 @@
-Test Directory for REACT components
+Dev/test directory for devfestNYC 2016 Hackthon project Go Mingo.
