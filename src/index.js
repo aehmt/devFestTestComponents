@@ -6,3 +6,4 @@ import './styles/style.scss'
 
 ReactDOM.render(<App index={true} firebase={firebase()}/>, document.getElementById('main'));
 
+

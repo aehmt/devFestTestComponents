@@ -21,9 +21,7 @@ export default class App extends React.Component{
     this.eventSearch('karaoke')
   }
   
-  componentDidMount(){
-    this.loadStyleSheet('style', '/style/style.css');
-  }
+
 
   componentWillMount() {
     const that = this;
@@ -38,6 +36,7 @@ export default class App extends React.Component{
       }
     });
   }
+
 
   eventSearch(term) {
     const OAuth_token = 'FEELRVTAKH4YPZX4BKQT';
@@ -57,7 +56,6 @@ export default class App extends React.Component{
     const eventSearch = _.debounce((term) => {this.eventSearch(term)}, 500);
 
     if (this.state.currentUser === null) {
-      debugger;
       return (<Login />)
     } else {
       if (this.state.index){
@@ -76,6 +74,7 @@ export default class App extends React.Component{
           </div>
         )
       }
+
     }
   }
 }
