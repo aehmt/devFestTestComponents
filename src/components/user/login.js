@@ -6,7 +6,8 @@ export default class Login extends React.Component{
 		super();
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      currentUser: ''
     };
   }
 
@@ -18,7 +19,7 @@ export default class Login extends React.Component{
 
   login(e) {
     e.preventDefault();
-    loginUser(this.state.email, this.state.password);
+    loginUser(this.state.email, this.state.password, this.state.currentUser);
   }
 
   logout(e) {
@@ -39,7 +40,6 @@ export default class Login extends React.Component{
   render() {
     return (
     	<div>
-    		{currentUser()}
 	      <form role="form">
 	        <div className="form-group">
 	          <input type="email" 

@@ -51,5 +51,17 @@ module.exports = {
 			  // An error happened.
         console.log(error)
 			});
-    }
+    },
+    onAuthStateChanged: function(user) {
+      if (user) {
+        var userName = user.displayName;
+        this.userName.removeAttribute('hidden');
+        this.userPic.removeAttribute('hidden');
+        this.signOutButton.removeAttribute('hidden');
+        this.signInButton.setAttribute('hidden', 'true');
+        console.log('user')
+      } else {
+        this.signInButton.removeAttribute('hidden');
+      }
+    } 
 };
