@@ -59,8 +59,8 @@ export default class App extends React.Component{
     if (this.state.currentUser === null) {
       return (
         <div> 
-          <div className="blur" style={{top: '0'}}></div>
-          <Login />
+          <div className="background-image" style={{top: '0'}}></div>
+          <div className="inner"><Login /></div>
         </div>
       )
     } else {
