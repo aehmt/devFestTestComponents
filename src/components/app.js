@@ -63,14 +63,13 @@ export default class App extends React.Component{
         return (
           <div id="eventContainer">
             <SearchBar onSearchTermChange={eventSearch} />
-            <Logout />
-            <div>
-              <div className="row">
-                <div className="col-md-6">
+            <div id="content" className="container">
+              <div className="row row-eq-height">
+                <div className="col-md-8">
+
                   <EventDetail event={this.state.selectedEvent}/>
                 </div>
-                <div className="col-md-6">
-                  <p>Events for you to check out:</p>
+                <div className="col-md-4">
                   <EventList onEventSelect={selectedEvent => this.setState({selectedEvent})} events={this.state.events} />
                 </div>
               </div>
