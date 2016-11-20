@@ -38,9 +38,9 @@ export default class App extends React.Component{
   }
 
 
-  eventSearch(term) {
+  eventSearch(term, location) {
     const OAuth_token = 'FEELRVTAKH4YPZX4BKQT';
-    var url = `https://www.eventbriteapi.com/v3/events/search/?q=${term}&token=${OAuth_token}`
+    var url = `https://www.eventbriteapi.com/v3/events/search/?q=${term}&token=${OAuth_token}&location.address=${location}&location.within=50mi`
     axios.get(url)
       .then((response) => {
         this.setState({
@@ -54,7 +54,7 @@ export default class App extends React.Component{
   }
 
   render(){
-    const eventSearch = _.debounce((term) => {this.eventSearch(term)}, 300);
+    const eventSearch = _.debounce((term, location) => {this.eventSearch(term, location)}, 300);
 
     if (this.state.currentUser === null) {
       return (<Login />)
