@@ -39,7 +39,6 @@ export default class Login extends React.Component{
   render() {
     return (
     	<div>
-    		{currentUser()}
 	      <form role="form">
 	        <div className="form-group">
 	          <input type="email" 
