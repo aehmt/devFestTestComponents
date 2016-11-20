@@ -22,11 +22,6 @@ export default class Login extends React.Component{
     loginUser(this.state.email, this.state.password);
   }
 
-  logout(e) {
-    e.preventDefault();
-    logoutUser();
-  }
-
   handleInputChange(name, e) {
     var change = {};
     change[name] = e.target.value;
@@ -39,10 +34,6 @@ export default class Login extends React.Component{
 
   render() {
     return (
-      <div>
-
-        
-      
     	<div id="login" className="container" style={{marginTop: '100px', width: '70%'}}>
         <div className="row">
           <div className="col-md-4 col-md-offset-5"><img src={logo} alt=""/></div>
@@ -75,7 +66,6 @@ export default class Login extends React.Component{
           </form>
         </div>
     	</div>
-      </div>
     );
   }
 }

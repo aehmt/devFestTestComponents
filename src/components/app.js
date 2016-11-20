@@ -68,10 +68,10 @@ export default class App extends React.Component{
         return (
           <div id="eventContainer">
             {this.state.selectedEvent.logo ? <div className="background-2" style={{backgroundImage:`url(${this.state.selectedEvent.logo.url})`, backgroundSize:'cover'}}></div> : <div className="background-2" style={{backgroundImage:`url('http://www.arabamerica.com/wp-content/themes/arabamerica/assets/img/thumbnail-default.jpg')`, backgroundSize:'cover'}}></div> }  
-          <Logout />
-          <div className="row">
-            <SearchBar onSearchTermChange={eventSearch} />
-          </div>
+            <Logout />
+            <div className="row">
+              <SearchBar onSearchTermChange={eventSearch} />
+            </div>
             <div id="content" className="container">
               <div className="row row-eq-height">
                 <div className="col-md-8">
