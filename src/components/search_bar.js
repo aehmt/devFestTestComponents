@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import $ from 'jquery'
 
 class SearchBar extends Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class SearchBar extends Component {
     
     this.state = { term: 'karaoke' };
   }
+
 
   onInputChange(term) {
     this.setState({term});
@@ -15,7 +17,7 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-        <input value={this.state.term} onChange={event => this.onInputChange(event.target.value)} />
+        <input id="search-bar" value={this.state.term} onChange={event => this.onInputChange(event.target.value)} />
       </div>
     );
   }

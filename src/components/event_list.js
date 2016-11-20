@@ -7,10 +7,25 @@ const EventList = (props) => {
       <EventListItem onEventSelect={props.onEventSelect} event={event} key={event.id} />
     )
   })
+
+  const listStyle = {
+    padding: '0px',
+    overflow: 'scroll'
+  }
+
+  const titleStyle ={
+    fontSize: '1.3em'
+  }
   return (
-    <ul className="list-group">
-      {events} 
-    </ul>
+    <div className="">
+      <p style={titleStyle}>Events for you to check out:</p>
+      <div className="list-group">
+        <ul style={listStyle}>
+          {events} 
+        </ul>
+      </div>
+    </div>
+    
   )
 }
 

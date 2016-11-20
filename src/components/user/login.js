@@ -38,20 +38,27 @@ export default class Login extends React.Component{
 
   render() {
     return (
-    	<div>
-	      <form role="form">
-	        <div className="form-group">
-	          <input type="email" 
-	          				onChange={this.handleInputChange.bind(this, 'email')}
-										value={this.state.email} placeholder="Email" />
-	          <input type="password" 
-	          				onChange={this.handleInputChange.bind(this, 'password')}
-										value={this.state.password} placeholder="Password" />
-	        </div>
-	        <button type="submit" onClick={this.signup.bind(this)}>Sign up</button>
-	        <button type="submit" onClick={this.login.bind(this)}>Login</button>
-	        <button type="submit" onClick={this.logout.bind(this)}>Log out</button>
-	      </form>
+    	<div className="container">
+        <form>
+          <div className="form-group label-static is-empty">
+            <label className="control-label" htmlFor="exampleInputEmail1">Email address</label>
+            <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Email"
+                    onChange={this.handleInputChange.bind(this, 'email')}
+                    value={this.state.email} placeholder="Email"
+            />
+          </div>
+          <div className="form-group label-static">
+            <label className="control-label" htmlFor="exampleInputPassword1">Password</label>
+            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"
+                    onChange={this.handleInputChange.bind(this, 'password')}
+                    value={this.state.password} placeholder="Password"
+            />
+          </div>
+          <button type="submit" className="btn btn-raised btn-primary" onClick={this.signup.bind(this)}>Sign up</button>
+          <button type="submit" className="btn btn-raised btn-default" onClick={this.login.bind(this)}>Login</button>
+          <button type="submit" className="btn btn-raised btn-info" onClick={this.logout.bind(this)}>Log out</button>
+          
+        </form>
     	</div>
     );
   }
