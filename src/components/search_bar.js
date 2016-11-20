@@ -16,13 +16,18 @@ class SearchBar extends Component {
   
   render() {
     return (
-      <div className="search-bar">
-        Event:<input id="search-bar" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
-        <br></br>
-        Location:<input id="location-search-bar" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
+      <div>
+        <form className="search-container">
+          <a href="#"><img className="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"/></a>
+          Event:<input type="text" id="search-bar" placeholder="What can I help you with today?" value={this.state.term} onChange={event => this.onInputChange(event.target.value, this.state.location)} />
+          Location:<input type="text" id="location-search-bar" value={this.state.location} onChange={event => this.onInputChange(this.state.term, event.target.value)} />
+        </form>
       </div>
     );
   }
 }
 
 export default SearchBar;
+
+
+

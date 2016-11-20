@@ -62,7 +62,11 @@ export default class App extends React.Component{
       if (this.state.index){
         return (
           <div id="eventContainer">
+          <div className="row">
             <SearchBar onSearchTermChange={eventSearch} />
+          </div>
+            
+
             <div id="content" className="container">
               <div className="row row-eq-height">
                 <div className="col-md-8">
