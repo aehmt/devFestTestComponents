@@ -103,11 +103,11 @@ html {
 }
 
 input#search-bar{
-  margin: 0 auto;
+  margin: 10px auto;
   width: 100%;
   height: 45px;
   padding: 0 20px;
-  font-size: 1rem;
+
   border: 1px solid #D0CFCE;
   outline: none;
   &:focus{
@@ -131,11 +131,9 @@ input#search-bar{
 
 .search-icon{
   position: relative;
-  float: right;
+  float: left;
   width: 75px;
   height: 75px;
-  top: -62px;
-  right: -45px;
 }
 
 
