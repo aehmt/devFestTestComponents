@@ -57,11 +57,17 @@ export default class App extends React.Component{
     const eventSearch = _.debounce((term, location) => {this.eventSearch(term, location)}, 300);
 
     if (this.state.currentUser === null) {
-      return (<Login />)
+      return (
+        <div> 
+          <div className="blur" style={{top: '0'}}></div>
+          <Login />
+        </div>
+      )
     } else {
       if (this.state.index){
         return (
           <div id="eventContainer">
+          <Logout />
           <div className="row">
             <SearchBar onSearchTermChange={eventSearch} />
           </div>
@@ -80,6 +86,7 @@ export default class App extends React.Component{
       } else {
         return (
           <div id="userMenu">
+            <Logout />
             <FilteredUsers going={this.state.interestedUsers} filter={this.state.filterBy}/>
           </div>
         )
